@@ -1,0 +1,29 @@
+<h1> <span>Commande de </span> <%= @course.pro_client %> pour <%=@course.client_name%></h1>
+<div class="container">
+  <div class="d-flex justify-content-around">
+    <div class="card mb-0">
+      <h4 class="text-center">Info course :</h4>
+      <%= simple_form_for @course do |f| %>
+      <p>Départ (<%=75011%>)</p>
+        <%= f.input :address, input_html: { :autocomplete => "street-address"}%>
+      <p>Arrivée (<%=75011%>)</p>
+        <%= f.input :address, input_html: { :autocomplete => "street-address"}%>
+      <% end %>
+      <p class="text-center">Distance totale 100 km</p>
+      <p>Objets à Transporter:</p>
+      <p>Détails:</p>
+    </div>
+    <div class="card">
+      <h4 class="text-center">Info ops :</h4>
+      <%= simple_form_for @course do |f| %>
+      <p>Départ (<%=75011%>)</p>
+        <%= f.input :address, input_html: { :autocomplete => "street-address"}%>
+      <p>Arrivée (<%=75011%>)</p>
+        <%= f.input :address, input_html: { :autocomplete => "street-address"}%>
+      <% end %>
+      <p class="text-center">Distance totale 100 km</p>
+      <p>Objets à Transporter:</p>
+      <p>Détails:</p>
+    </div>
+  </div>
+</div>

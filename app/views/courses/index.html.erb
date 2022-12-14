@@ -1,7 +1,24 @@
-<h1>THIS IS FUCKING INDEX</h1>
+  <%= form_with url: courses_path, method: :get, class: "d-flex align-items-center col-3 offset-1 mb-2" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Filter"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
 
-<% @courses.each do |course|%>
-<p>
-<%= course.pro_client %>
-</p>
-<%end%>
+<div class="offset-1">
+  <% @courses.each do |course|%>
+    <%= link_to course_path(course) do%>
+      <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2><%= course.pro_client %></h2>
+        <p>
+        <%= course.address %>
+        </p>
+      </div>
+      </div>
+    <% end %>
+  <%end%>
+</div>
