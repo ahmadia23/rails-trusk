@@ -10,8 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_13_202709) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "assignments", force: :cascade do |t|
+    t.bigint "trusker_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_assignments_on_course_id"
+    t.index ["trusker_id"], name: "index_assignments_on_trusker_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.date "starting_time"
+    t.date "ending_time"
+    t.integer "commission"
+    t.integer "size"
+    t.text "address"
+    t.string "client_name"
+    t.bigint "trusker_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "price"
+    t.index ["trusker_id"], name: "index_courses_on_trusker_id"
+  end
+
+  create_table "truskers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "truck_size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "assignments", "courses"
+  add_foreign_key "assignments", "truskers"
+  add_foreign_key "courses", "truskers"
 end
