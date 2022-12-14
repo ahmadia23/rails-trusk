@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_13_202709) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_14_200958) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,17 +24,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_202709) do
   end
 
   create_table "courses", force: :cascade do |t|
+    t.string "client_name"
+    t.string "address"
+    t.integer "commission"
     t.date "starting_time"
     t.date "ending_time"
-    t.integer "commission"
-    t.integer "size"
-    t.text "address"
-    t.string "client_name"
-    t.bigint "trusker_id", null: false
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "price"
-    t.index ["trusker_id"], name: "index_courses_on_trusker_id"
+    t.string "pro_client"
   end
 
   create_table "truskers", force: :cascade do |t|
@@ -43,9 +41,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_202709) do
     t.integer "truck_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
   end
 
   add_foreign_key "assignments", "courses"
   add_foreign_key "assignments", "truskers"
-  add_foreign_key "courses", "truskers"
 end

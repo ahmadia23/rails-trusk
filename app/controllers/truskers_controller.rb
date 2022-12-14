@@ -1,2 +1,0 @@
-class TruskersController < ApplicationController
-end

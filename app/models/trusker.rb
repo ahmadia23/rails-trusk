@@ -1,4 +1,4 @@
 class Trusker < ApplicationRecord
-  has_many :courses
-  validates :truck_size, inclusion: { in: %w(6 12 20)}
+  has_many :assignments
+  has_many :courses, through: :assignments
 end

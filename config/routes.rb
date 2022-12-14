@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :controllers
   root to: "pages#home"
   resources "courses" do
     resources "assignments", only: [:create]
