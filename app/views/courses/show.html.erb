@@ -2,7 +2,7 @@
 <div class="container">
   <div class="d-flex justify-content-around">
     <div class="card mb-0">
-      <h4 class="text-center">Info course :</h4>
+      <h4 class="text-center show-card-title">Info course :</h4>
       <%= simple_form_for @course do |f| %>
       <p>Départ (<%=75011%>)</p>
         <%= f.input :address, input_html: { :autocomplete => "street-address"}%>
@@ -14,7 +14,7 @@
       <p>Détails:</p>
     </div>
     <div class="card">
-      <h4 class="text-center">Info ops :</h4>
+      <h4 class="text-center show-card-title">Info ops :</h4>
       <%= simple_form_for @course do |f| %>
       <p>Départ (<%=75011%>)</p>
         <%= f.input :address, input_html: { :autocomplete => "street-address"}%>
