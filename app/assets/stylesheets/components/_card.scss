@@ -8,10 +8,21 @@
 }
 
 
+
+
 .show-card-title{
   font-family: 'Unbounded';
   background-color: #000DA6;
   padding: 0;
   color: white;
   font-style: italic;
+}
+.categories {
+  background-color: #666666;
+}
+.categories .item {
+  background-color: #666666;
+  color: white;
+  border-right: solid;
+  border-color: black;
 }

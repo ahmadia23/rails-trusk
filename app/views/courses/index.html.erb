@@ -7,13 +7,35 @@
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
+  <div class="categories d-flex justify-content-evenly">
+    <div class="categories item">
+      <p>Nom du magasin</p>
+    </div>
+    <div class="categories item">
+      <p>Camion</p>
+    </div>
+    <div class="categories item">
+      <p>Trusker</p>
+    </div>
+    <div class="categories item">
+      <p>Adresse</p>
+    </div>
+    <div class="categories item">
+      <p>Prise en charge</p>
+    </div>
+    <div class="categories item">
+      <p>Livraison</p>
+    </div>
+  </div>
 <div class="offset-1">
   <% @courses.each do |course|%>
     <%= link_to course_path(course) do%>
       <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
+      <div class="card-product-infos d-flex justify-content-evenly">
         <h2><%= course.pro_client %></h2>
+        <p> <%= course.starting_time %> </p>
+        <p> <%= course.ending_time %> </p>
+        <p> <%= course.price %> </p>
         <p>
         <%= course.address %>
         </p>
