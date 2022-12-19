@@ -1,11 +1,19 @@
-  <%= form_with url: courses_path, method: :get, class: "d-flex align-items-center col-3 offset-1 mb-2" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Filter"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+  <div class="container form-index-top d-flex">
+      <div>
+        <%= form_with url: courses_path, method: :get, class: "d-flex align-items-center offset-1 mb-2" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Filter",
+            style: "width: 20vw;"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= select_tag :tags, ["No_DRIVER"], placeholder: "tags...", class:"form-control"%>
+        <% end %>
+      </div>
+
+  </div>
+
 
   <div class="categories d-flex justify-content-evenly">
     <div class="categories item">
